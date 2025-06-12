@@ -1,0 +1,32 @@
+import React from 'react';
+import Input from '../atoms/Input';
+import Label from '../atoms/Label';
+
+type FormProps = {
+  label: string;
+  name: string;
+  type: string;
+  placeholder: string;
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onFocus: () => void;
+  error ?: string
+};
+function Form(props: FormProps) {
+  return (
+    <div className="form">
+      <Label htmlFor={props.name} text={props.label} />
+      <Input
+        type={props.type}
+        placeholder={props.placeholder}
+        value={props.value}
+        onChange={props.onChange}
+        onFocus={props.onFocus}
+      />
+      {props.error && <p className="error">{props.error}</p>}
+
+    </div>
+  );
+}
+
+export default Form;

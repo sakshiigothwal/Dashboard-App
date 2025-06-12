@@ -1,0 +1,21 @@
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #1e1e2f;
+    padding: 1rem;
+    color: white;
+}
+
+.nb-list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nb-list li {
+    cursor: pointer;
+    font-weight: 500;
+}

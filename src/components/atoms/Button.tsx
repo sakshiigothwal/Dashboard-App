@@ -1,10 +1,12 @@
 import React from "react"
 
 type ButtonProps = {
-    clickHandler: ()=> void
+    label: string
+    onClick: ()=> void
+    type?: "button" | "submit" | "reset"
 }
 const Button = (props: ButtonProps) => {
-    return <button onClick={props.clickHandler}>Click</button>
+    return <button type={props.type} onClick={props.onClick}>label</button>
 }
 
 export default Button
