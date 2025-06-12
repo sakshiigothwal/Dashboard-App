@@ -18,13 +18,13 @@ function Form(props: FormProps) {
       <Label htmlFor={props.name} text={props.label} />
       <Input
         type={props.type}
+        name={props.name}
         placeholder={props.placeholder}
         value={props.value}
         onChange={props.onChange}
         onFocus={props.onFocus}
       />
-      {props.error && <p className="error">{props.error}</p>}
-
+      
     </div>
   );
 }

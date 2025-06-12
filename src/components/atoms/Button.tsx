@@ -6,7 +6,7 @@ type ButtonProps = {
     type?: "button" | "submit" | "reset"
 }
 const Button = (props: ButtonProps) => {
-    return <button type={props.type} onClick={props.onClick}>label</button>
+    return <button type={props.type} onClick={props.onClick}>{props.label}</button>
 }
 
 export default Button

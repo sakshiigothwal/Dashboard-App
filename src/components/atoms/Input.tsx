@@ -1,6 +1,7 @@
 import React from 'react'
 
 type InputProps = {
+  name: string
   type: string
   placeholder: string
   value: string
@@ -11,7 +12,7 @@ type InputProps = {
 const Input = (props: InputProps) => {
   return (
     <input
-      type={props.type} placeholder={props.placeholder} value={props.value} onChange={props.onChange} onFocus={props.onFocus}
+      type={props.type} placeholder={props.placeholder} name={props.name} value={props.value} onChange={props.onChange} onFocus={props.onFocus}
     />
   )
 }
