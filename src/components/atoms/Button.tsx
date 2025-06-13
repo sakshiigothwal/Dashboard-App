@@ -1,7 +1,7 @@
 import React from "react"
 
 type ButtonProps = {
-    label: string
+    label: string | React.ReactNode
     onClick: ()=> void
     type?: "button" | "submit" | "reset"
 }

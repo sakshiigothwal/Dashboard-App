@@ -25,7 +25,7 @@ function Form(props: FormProps) {
         onChange={props.onChange}
         onFocus={props.onFocus}
       />
-      
+    {props.error && <p className="error">{props.error}</p>} 
     </div>
   );
 }

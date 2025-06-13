@@ -1,21 +1,38 @@
 .navbar {
-    display: flex;
-    justify-content: flex-end;
-    background-color: #1e1e2f;
-    padding: 1rem;
-    color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 16px;          
+  background-color: #1f0f31;
+  border-bottom: 1px solid #fff;
+  height: 50px;                
+  box-sizing: border-box;
 }
 
-.nb-list {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
+.header {
+  font-size: 20px;           
+  font-weight: 600;
+  margin-right: auto;
 }
 
-.nb-list li {
-    cursor: pointer;
-    font-weight: 500;
+.navbar input[type="text"] {
+  padding: 4px 8px;          
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  height: 30px;
+  margin-left: 20px;
+}
+
+.search {
+  height: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  width: 16px;
+}
+
+.navbar button {
+  margin-left: 10px;
+  padding: 4px 10px;          
+  font-size: 14px;
 }
