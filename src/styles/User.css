@@ -1,5 +1,7 @@
 .user{
   padding: 2rem;
+  color: white;
+  margin-left: 240px;
 }
 
 .user{
@@ -8,6 +10,15 @@
   margin: 0 auto;
   border-collapse: collapse;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.user table {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  color: black;
 }
 
 .user th,
@@ -18,15 +29,15 @@
 }
 
 .user th {
-  background-color: #f4f4f4;
+  background-color: #C8ACD6;
   font-weight: bold;
 }
 
 .user tr:nth-child(even) {
-  background-color: #fafafa;
+  background-color: #f4f4f4;
 }
 .adduser button{
-  background-color: black;
+  background-color: #17153B;
   color: white;
   border: none;
   padding: 10px 16px;
@@ -36,5 +47,5 @@
 }
 
 .adduser button:hover {
-  background-color: gray;
+  background-color: #2E236C;
 }

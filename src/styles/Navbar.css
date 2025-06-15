@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 6px 16px;          
-  background-color: #1f0f31;
+  background-color: #2E236C;
   border-bottom: 1px solid #fff;
   height: 50px;                
   box-sizing: border-box;
@@ -13,6 +13,7 @@
   font-size: 20px;           
   font-weight: 600;
   margin-right: auto;
+  color: white;
 }
 
 .navbar input[type="text"] {

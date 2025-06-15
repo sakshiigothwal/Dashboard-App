@@ -3,14 +3,14 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f4f4f4;
+  background-color: linear-gradient(to right, #17153B, #2E236C);
 }
 
 .box {
   background: white;
   padding: 40px;
   border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   width: 350px;
 }
 .box input{

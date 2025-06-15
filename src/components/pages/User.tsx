@@ -1,18 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../atoms/Button';
 import Sidebar from '../molecules/Sidebar';
-import '../../styles/User.css'
+import '../../styles/User.css';
+import axios from 'axios';
 
 const User = () => {
   const navigate = useNavigate();
-  const users = JSON.parse(localStorage.getItem('users') || '[]');
+  const [users, setUsers] = useState<any[]>([]);
+
+  useEffect(() => {
+    axios.get('https://jsonplaceholder.typicode.com/users')
+      .then((res) => setUsers(res.data))
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
     <div className='user'>
-      <h2>UserList</h2>
       <Sidebar />
+      <h2>User List</h2>
       <div className='adduser'>
-      <Button label="Add User" onClick={() => navigate('/add-user')}/>
+        <Button label="Add User" onClick={() => navigate('/add-user')} />
       </div>
       {users.length > 0 ? (
         <table className="table">
@@ -25,7 +33,7 @@ const User = () => {
           </thead>
           <tbody>
             {users.map((u: any, index: number) => (
-              <tr key={index}>
+              <tr key={u.id}>
                 <td>{index + 1}</td>
                 <td>{u.name}</td>
                 <td>{u.email}</td>
@@ -34,7 +42,7 @@ const User = () => {
           </tbody>
         </table>
       ) : (
-        <p>No users added yet.</p>
+        <p>No users</p>
       )}
     </div>
   );

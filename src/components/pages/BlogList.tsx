@@ -1,37 +1,34 @@
-
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Cards from '../molecules/Cards';
 import Sidebar from '../molecules/Sidebar';
-import '../../styles/BlogList.css'
+import '../../styles/BlogList.css';
+import axios from 'axios';
 
 const BlogList = () => {
-  const blogs = [
-    {
-      id: 1,
-      title: 'xyz',
-      description: 'xyz',
-      date: '2025-01-01',
-    },
-    {
-      id: 2,
-      title: 'abc',
-      description: 'abc',
-      date: '2025-06-13',
-    },
-  ];
+  const [blogs, setBlogs] = useState<any[]>([]);
+
+  useEffect(() => {
+    axios.get('https://jsonplaceholder.typicode.com/posts')
+      .then((res) => setBlogs(res.data)) 
+      .catch((err) => console.error(err));
+  }, []);
 
   return (
     <div className="blog">
-      <Sidebar/>
+      <Sidebar />
       <h2>Blog List</h2>
-      {blogs.map((blog) => (
-        <Cards
-          key={blog.id}
-          title={blog.title}
-          description={blog.description}
-          date={blog.date}
-        />
-      ))}
+      {blogs.length > 0 ? (
+        blogs.map((blog) => (
+          <Cards
+            key={blog.id}
+            title={blog.title}
+            description={blog.body}
+            date={`Post ID: ${blog.id}`}
+          />
+        ))
+      ) : (
+        <p>No Blogs</p>
+      )}
     </div>
   );
 };
